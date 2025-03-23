@@ -9,14 +9,10 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     transports: ["websocket", "polling"],
-    cors: { origin: process.env.CLIENT_URI, methods: ["GET", "POST"] },
+    cors: { origin: 'https://form-pckl.onrender.com', methods: ["GET", "POST"] },
 });
 
-app.use(cors({
-    origin: [process.env.CLIENT_URI],
-    methods: ["GET", "POST"],
-    credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
