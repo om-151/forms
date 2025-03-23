@@ -15,7 +15,6 @@ export default function Form() {
         e.preventDefault();
         socket.emit("formData", formData);
 
-        // Clear input fields after submission
         setFormData({ name: "", title: "", message: "" });
     };
 
