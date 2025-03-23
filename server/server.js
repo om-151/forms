@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     transports: ["websocket", "polling"],
-    cors: { origin: 'https://form-pckl.onrender.com', methods: ["GET", "POST"] },
+    cors: { origin: process.env.CLIENT_URI, methods: ["GET", "POST"] },
 });
 
 app.use(cors());
